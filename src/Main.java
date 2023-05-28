@@ -42,7 +42,7 @@ public class Main {
                 System.out.println("результат операции : "+Calc.IntToRoman(Integer.parseInt(res)));
             }
             else {
-                throw new IOException("в римской системе нет отрицательных чисел!");
+                throw new IOException("в римской системе цифры начинаются с 1 всё что меньще не может быть отображено!");
             }
         }
 
@@ -144,6 +144,7 @@ class Calc{
         else { flag1=false; }
         for (int i=1;input.length()>i;i++){
            if (input.charAt(i)=='+'||input.charAt(i)=='-'||input.charAt(i)=='*'||input.charAt(i)=='/'){i++;}
+           if (i>=input.length()){throw new IOException("формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *) !");}
             if (input.charAt(i)=='I'||input.charAt(i)=='V'||input.charAt(i)=='X'){flag2=true;}
             else {flag2=false;}
 
@@ -160,7 +161,7 @@ class Calc{
         map.put('I',1);
         map.put('V',5);
         map.put('X',10);
-
+//Логика такая берем VIII начинаем с конца I ключ а под ним 1 записываем в рез, сравниваем слева стоящим  если тот меньще минусуем от рез а если нет плюсуем
 
         int end = s.length()-1;
         char[] arr = s.toCharArray();
