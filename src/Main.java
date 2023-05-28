@@ -6,7 +6,8 @@ import java.util.HashMap;
 public class Main {
     public static void main(String[] args) throws IOException {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите слова одной строкой через пробел:   ");
+        System.out.println("Калькулятор");
+        System.out.println("Введите два операнда и один оператор(пример 5 + 5) :   ");
 
 
         String input = scanner.nextLine();//ввод
